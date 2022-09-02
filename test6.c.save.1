@@ -1,0 +1,25 @@
+#include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+void *attr_thread1(void *arg){
+	printf("thread 1\n");
+	sleep(1);
+	return (void*)1;
+}
+void *attr_thread2 (void *arg){
+	printf("Thread 2\n");
+	sleep(1);
+	return (void *)2;
+}
+int main(){
+	pthread_attr_t attr; //스레드 속성
+	pthread_t tid1, tid2;
+	int status;
+	void *result1, *result2;
+	pthread_attr_init(&attr);
+	status = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+	if(status != 0){
+		fprintf(stderr, "SETdetachstate");
+		exit(1);
+	}
+	pthread_create (&tid1, &attr, attr_thread1, NULL);

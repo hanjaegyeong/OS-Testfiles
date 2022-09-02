@@ -1,0 +1,169 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fb098b533d1, pid=2661, tid=16465
+#
+# JRE version: OpenJDK Runtime Environment (11.0.11+9) (build 11.0.11+9-Ubuntu-0ubuntu2.18.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.11+9-Ubuntu-0ubuntu2.18.04, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x23d1]
+#
+# Core dump will be written. Default location: core.2661 (may not exist)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -DAPP_DIR=/snap/arduino/61 -Duser.home=/home/hjg/snap/arduino/61 processing.app.Base
+
+Host: Intel(R) Pentium(R) CPU 5405U @ 2.30GHz, 4 cores, 7G, Ubuntu 18.04 LTS
+Time: Sun Feb 20 19:58:25 2022 KST elapsed time: 20984.184980 seconds (0d 5h 49m 44s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb054050800):  JavaThread "XToolkt-Shutdown-Thread" [_thread_in_vm, id=16465, stack(0x00007fb083eff000,0x00007fb084000000)]
+
+Stack: [0x00007fb083eff000,0x00007fb084000000],  sp=0x00007fb083ffd040,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x23d1]
+C  [libjimage.so+0x304a]
+C  [libjimage.so+0x3515]  JIMAGE_FindResource+0xd5
+V  [libjvm.so+0x596f2f]
+V  [libjvm.so+0x5991cb]
+V  [libjvm.so+0xd845ac]
+V  [libjvm.so+0xd831d2]
+V  [libjvm.so+0xd856e6]
+V  [libjvm.so+0x6403ad]
+V  [libjvm.so+0x640812]
+V  [libjvm.so+0x9ee696]
+V  [libjvm.so+0x9f512d]
+V  [libjvm.so+0x8274a6]
+V  [libjvm.so+0x827add]
+j  sun.awt.X11.XToolkit.lambda$init$0()V+0 java.desktop@11.0.11
+j  sun.awt.X11.XToolkit$$Lambda$28.run()V+4 java.desktop@11.0.11
+j  java.lang.Thread.run()V+11 java.base@11.0.11
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x82db91]
+V  [libjvm.so+0x82c030]
+V  [libjvm.so+0x82c0eb]
+V  [libjvm.so+0x8cae9c]
+V  [libjvm.so+0xdba950]
+V  [libjvm.so+0xdb67e9]
+V  [libjvm.so+0xb7b34e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.awt.X11.XToolkit.lambda$init$0()V+0 java.desktop@11.0.11
+j  sun.awt.X11.XToolkit$$Lambda$28.run()V+4 java.desktop@11.0.11
+j  java.lang.Thread.run()V+11 java.base@11.0.11
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007fb07b894c6c
+
+Register to memory mapping:
+
+RAX=0x0000000000007314 is an unknown value
+RBX=0x00007fb083ffd0f1 is pointing into the stack for thread: 0x00007fb054050800
+RCX=0x00007fb07b87801c is an unknown value
+RDX=0x0000000000007314 is an unknown value
+RSP=0x00007fb083ffd040 is pointing into the stack for thread: 0x00007fb054050800
+RBP=0x00007fb083ffd060 is pointing into the stack for thread: 0x00007fb054050800
+RSI=0x00007fb083ffd0f0 is pointing into the stack for thread: 0x00007fb054050800
+RDI=0x00007fb098d56030: <offset 0x0000000000205030> in /snap/arduino/61/usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007fb098b51000
+R8 =0x0 is NULL
+R9 =
+[error occurred during error reporting (printing register info), id 0xb, SIGSEGV (0xb) at pc=0x00007fb09ff029e7]
+
+Registers:
+RAX=0x0000000000007314, RBX=0x00007fb083ffd0f1, RCX=0x00007fb07b87801c, RDX=0x0000000000007314
+RSP=0x00007fb083ffd040, RBP=0x00007fb083ffd060, RSI=0x00007fb083ffd0f0, RDI=0x00007fb098d56030
+R8 =0x0000000000000000, R9 =0x00000000ca0d71f0, R10=0x00007fb083ffd114, R11=0x50796172546d6574
+R12=0x00007fb083ffd0f0, R13=0x000000000000843b, R14=0x00007fb083ffe188, R15=0x00007fb054051470
+RIP=0x00007fb098b533d1, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fb083ffd040)
+0x00007fb083ffd040:   0000000000000000 00007fb088023c70
+0x00007fb083ffd050:   0000000000000000 00007fb083ffd0f0
+0x00007fb083ffd060:   00007fb083ffd0d0 00007fb098b5404a
+0x00007fb083ffd070:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007fb098b533d1)
+0x00007fb098b532d1:   48 89 df 48 89 4d 88 e8 53 f3 ff ff 48 8b 4d 88
+0x00007fb098b532e1:   44 03 6d 90 e9 42 fd ff ff 66 0f 1f 44 00 00 8b
+0x00007fb098b532f1:   08 41 89 0e 44 89 c1 8b 74 08 fc 41 89 74 0e fc
+0x00007fb098b53301:   e9 d8 fe ff ff 66 2e 0f 1f 84 00 00 00 00 00 b9
+0x00007fb098b53311:   0a 00 00 00 e9 95 fd ff ff 44 89 c1 0f b7 74 08
+0x00007fb098b53321:   fe 66 41 89 74 0e fe e9 b1 fe ff ff 0f 1f 00 0f
+0x00007fb098b53331:   b6 17 89 f1 4c 8d 47 01 84 d2 74 1a 0f 1f 00 69
+0x00007fb098b53341:   c9 93 01 00 01 49 83 c0 01 31 d1 41 0f b6 50 ff
+0x00007fb098b53351:   84 d2 75 eb 89 ce 89 f0 25 ff ff ff 7f c3 90 48
+0x00007fb098b53361:   85 d2 0f 84 e1 00 00 00 85 c9 0f 84 d9 00 00 00
+0x00007fb098b53371:   55 48 89 e5 41 55 41 54 53 48 8d 5e 01 48 83 ec
+0x00007fb098b53381:   08 44 0f b6 06 45 84 c0 0f 84 b1 00 00 00 49 89
+0x00007fb098b53391:   da b8 93 01 00 01 66 0f 1f 84 00 00 00 00 00 44
+0x00007fb098b533a1:   69 c8 93 01 00 01 49 83 c2 01 41 0f b6 c0 45 0f
+0x00007fb098b533b1:   b6 42 ff 44 31 c8 45 84 c0 75 e4 25 ff ff ff 7f
+0x00007fb098b533c1:   41 89 cd 48 89 d1 31 d2 49 89 f4 41 f7 f5 89 d0
+0x00007fb098b533d1:   8b 34 81 48 8b 07 ff 50 20 85 c0 7f 22 ba ff ff
+0x00007fb098b533e1:   ff ff 74 04 f7 d0 89 c2 48 83 c4 08 89 d0 5b 41
+0x00007fb098b533f1:   5c 41 5d 5d c3 66 2e 0f 1f 84 00 00 00 00 00 41
+0x00007fb098b53401:   0f b6 34 24 89 c7 40 84 f6 74 1b 0f 1f 40 00 69
+0x00007fb098b53411:   ff 93 01 00 01 48 83 c3 01 31 f7 0f b6 73 ff 40
+0x00007fb098b53421:   84 f6 75 eb 89 f8 25 ff ff ff 7f 31 d2 48 83 c4
+0x00007fb098b53431:   08 41 f7 f5 5b 41 5c 41 5d 5d 89 d0 c3 66 90 b8
+0x00007fb098b53441:   93 01 00 01 e9 77 ff ff ff 83 ca ff 89 d0 c3 0f
+0x00007fb098b53451:   b6 17 48 89 f8 84 d2 75 19 eb 1e 0f 1f 40 00 38
+0x00007fb098b53461:   ca 75 1c 48 83 c0 01 0f b6 10 48 83 c6 01 84 d2
+0x00007fb098b53471:   74 15 0f b6 0e 84 c9 75 e6 c3 0f 1f 44 00 00 31
+0x00007fb098b53481:   c0 c3 0f 1f 44 00 00 c3 90 66 0f 1f 44 00 00 48
+0x00007fb098b53491:   85 f6 74 5a 0f b6 06 84 c0 74 54 0f 1f 40 00 0f
+0x00007fb098b534a1:   b6 d0 83 e0 07 c1 fa 03 44 8d 50 01 0f b6 c0 41
+0x00007fb098b534b1:   89 d1 4c 8d 44 06 02 48 8d 56 01 31 c0 66 90 0f
+0x00007fb098b534c1:   b6 0a 48 c1 e0 08 48 83 c2 01 48 09 c8 49 39 d0 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0 is NULL
+stack at sp + 1 slots: 0x00007fb088023c70 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+stack at sp + 2 slots: 0x0 is NULL
+stack at sp + 3 slots: 0x00007fb083ffd0f0 is pointing into the stack for thread: 0x00007fb054050800
+stack at sp + 4 slots: 0x00007fb083ffd0d0 is pointing into the stack for thread: 0x00007fb054050800
+stack at sp + 5 slots: 0x00007fb098b5404a: <offset 0x000000000000304a> in /snap/arduino/61/usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007fb098b51000
+stack at sp + 6 slots: 0x0 is NULL
+stack at sp + 7 slots: 0x0 is NULL
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fb05403a9e0, length=37, elements={
+0x00007fb088281800, 0x00007fb088285800, 0x00007fb088299800, 0x00007fb08829b800,
+0x00007fb08829d800, 0x00007fb08829f800, 0x00007fb0882a1800, 0x00007fb088339800,
+0x00007fb088796800, 0x00007fb08879e800, 0x00007fb000002800, 0x00007faff8015800,
+0x00007faff804a800, 0x00007faff804c000, 0x00007faff8054800, 0x00007faff8056800,
+0x00007fb089211000, 0x00007fb08952a800, 0x00007fb089554000, 0x00007fb089644800,
+0x00007fb088017000, 0x00007fb000019800, 0x00007fb00001b000, 0x00007fb000015000,
+0x00007fb000016000, 0x00007fb000018800, 0x00007fb000010800, 0x00007fb000011800,
+0x00007fb000012800, 0x00007fb03c007800, 0x00007fb03c008800, 0x00007fb03c009800,
+0x00007fb05404f000, 0x00007fb054050000, 0x00007fb054050800, 0x00007fb054052000,
+0x00007fb054052800
+}
+
+Java Threads: ( => current thread )
+  0x00007fb088281800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2673, stack(0x00007fb0608b5000,0x00007fb0609b6000)]
+  0x00007fb088285800 JavaThread "Finalizer" daemon [_thread_blocked, id=2674, stack(0x00007fb0607b4000,0x00007fb0608b5000)]
+  0x00007fb088299800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2675, stack(0x00007fb0606b3000,0x00007fb0607b4000)]
+  0x00007fb08829b800 JavaThread "Service Thread" daemon [_thread_blocked, id=2676, stack(0x00007fb0605b2000,0x00007fb0606b3000)]
+  0x00007fb08829d800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2677, stack(0x00007fb0604b1000,0x00007fb0605b2000)]
+  0x00007fb08829f800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2678, stack(0x00007fb0603b0000,0x00007fb0604b1000)]
+  0x00007fb0882a1800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=2679, stack(0x00007fb0602af000,0x00007fb0603b0000)]
+  0x00007fb088339800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=2681, stack(0x00007fb0600ac000,0x00007fb0601ad000)]
+  0x00007fb088796800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2685, stack(0x00007fb02a0f7000,0x00007fb02a1f8000)]
+  0x00007fb08879e800 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=2686, stack(0x00007fb029ff6000,0x00007fb02a0f7000)]
+  0x00007fb000002800 JavaThread "cc.arduino.packages.discoverers.serial.SerialDiscovery" [_thread_blocked, id=2708, stack(0x00007fb00cfec000,0x00007fb00d0ed000)]
+  0x00007faff8015800 JavaThread "Multihomed mDNS.Timer" daemon [_thread_blocked, id=2709, stack(0x00007fb014059000,0x00007fb01415a000)]
+  0x00007faff804a800 JavaThread "JmDNS(fe80-0-0-0-5247-8870-cc23-2d52-wlp0s20f3.local.).Timer" daemon [_thread_blocked, id=2711, stack(0x00007fb00c5bf000,0x00007fb00c6c0000)]
+  0x00007faff804c000 JavaThread "JmDNS(fe80-0-0-0-5247-8870-cc23-2d52-wlp0s20f3.local.).State.Timer" [_thread_blocked, id=2712, stack(0x00007fb00c4be000,0x00007fb00c5bf000)]
+  0x00007faff8054800 JavaThread "JmDNS(192-168-0-3.local.).Timer" daemon [_thread_blocked

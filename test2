@@ -1,0 +1,7 @@
+#!/bin/bash
+echo '1234'
+
+#mv test2.sh test3.sh
+#cp test.sh test2.sh
+#echo '1234567'
+#cat test.sh
